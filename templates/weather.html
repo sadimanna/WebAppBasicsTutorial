@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather App</title>
+</head>
+<body>
+  <h1>Weather App</h1>
+  <form action="/" method="post">
+    City: <input type="text" id="city" name="city" required><br><br>
+    <button>Get Weather</button>
+  </form>
+  <p id="weather"></p>
+  {% if weather_data %}
+  <p>Weather in {{city}}:</p>
+  <p>Temperature: {{weather_data['current']['temp_c']}} C</p>
+  <p>Condition: {{weather_data['current']['condition']['text']}}</p>
+  {% endif %}
+</body>
+</html>
